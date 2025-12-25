@@ -63,7 +63,7 @@ If data is insufficient, say what extra timeframe/metric would help.`;
 
     const out = await r.json();
     const answer = out?.choices?.[0]?.message?.content || JSON.stringify(out);
-    res.status(200).json({ answer });
+    res.status(200).send(answer);
   } catch (e) {
     res.status(500).json({ error: String(e) });
   }
